@@ -4,12 +4,9 @@ class Solution {
         for(int i=0;i<s.length();i++){
             hm.put(s.charAt(i),hm.getOrDefault(s.charAt(i),0)+1);
         }
-        int f=-1;
+        int f=hm.get(s.charAt(0));
         for(int i :hm.values()){
-            if(f==-1){
-                f=i;
-            }
-            else if(f!=i){
+            if(f!=i){
                 return false;
             }
         }
